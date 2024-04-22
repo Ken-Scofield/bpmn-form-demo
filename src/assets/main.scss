@@ -1,0 +1,171 @@
+@import "scss/file-drop";
+@import "scss/fullscreen";
+@import "scss/icons";
+@import "scss/icons_codes";
+@import "scss/normalize";
+@import "scss/style";
+@import "scss/form";
+
+/**
+ * bpmn + custom icon definitions
+ */
+@font-face {
+  font-family: 'app';
+  src: url('@/assets/fonts/app.ttf');
+  src: url('@/assets/fonts/app.woff?42391129') format('woff'), url('@/assets/fonts/app.ttf?42391129') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  // url('../font/app.eot?42391129#iefix') format('embedded-opentype'),
+  // , url('../font/app.svg?42391129#bpmnio') format('svg')
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "app";
+}
+
+
+#js-properties-panel {
+  position: fixed;
+  visibility: hidden;
+  right: 0;
+  top: 0;
+  width: 320px;
+}
+
+.content,
+.content > div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content > .message {
+  text-align: center;
+  display: table;
+
+  font-size: 16px;
+  color: #111;
+}
+
+.content > .message .note {
+  vertical-align: middle;
+  text-align: center;
+  display: table-cell;
+}
+
+.content .error .details {
+  max-width: 500px;
+  font-size: 12px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.content .error pre {
+  border: solid 1px #CCC;
+  background: #EEE;
+  padding: 10px;
+}
+
+.content:not(.with-error) .error,
+.content.with-error .intro,
+.content.with-diagram .intro {
+  display: none;
+}
+
+.content.with-diagram #js-properties-panel {
+  visibility: visible;
+}
+
+
+.content .canvas,
+.content.with-error .canvas {
+  visibility: hidden;
+}
+
+.content.with-diagram .canvas {
+  visibility: visible;
+  width: calc(100% - 320px); // fix width
+}
+
+.buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.buttons > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.buttons > li > a {
+  background: #DDD;
+  border: solid 1px #666;
+  display: inline-block;
+  padding: 5px;
+}
+
+.buttons a {
+  opacity: 0.3;
+}
+
+.buttons a.active {
+  opacity: 1.0;
+}
+
+
+//.zoom-controllers {
+//  width: auto;
+//  position: fixed;
+//  right: 330px;
+//  bottom: 80px;
+//}
+
+/* custom */
+.bpmn-modeler {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    height: 100%;
+
+    .bpmn-canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.properties-panel-parent {
+  border-left: 1px solid #ccc;
+  overflow: auto;
+
+  &:empty {
+    display: none;
+  }
+
+  > .djs-properties-panel {
+    padding-bottom: 70px;
+    min-height: 100%;
+  }
+}
+

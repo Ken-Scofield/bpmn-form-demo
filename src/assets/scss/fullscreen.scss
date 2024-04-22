@@ -1,0 +1,31 @@
+:full-screen .icon-resize:before {
+  content: '\e86e'; /* see .icon-resize-small:before */
+}
+
+:-moz-full-screen .icon-resize:before {
+  content: '\e86e'; /* see .icon-resize-small:before */
+}
+
+:-ms-full-screen .icon-resize:before {
+  content: '\e86e'; /* see .icon-resize-small:before */
+}
+
+:-webkit-full-screen .icon-resize:before {
+  content: '\e86e'; /* see .icon-resize-small:before */
+}
+
+.icon-resize:before {
+  content: '\e86d'; /* see .icon-resize-full:before */
+}
+
+.icon-resize:before {
+  content: '\e86d'; /* see .icon-resize-full:before */
+}
+
+.icon-resize:before {
+  content: '\e86d'; /* see .icon-resize-full:before */
+}
+
+.icon-resize:before {
+  content: '\e86d'; /* see .icon-resize-full:before */
+}

@@ -1,0 +1,7 @@
+docs/*
+.idea
+.git
+static/*
+node_modules
+inspect_output.js
+public/*
