@@ -76,3 +76,12 @@ config.module
 # issues
 
 diagram-js
+>https://github.com/bpmn-io/form-js-examples/pull/7
+> 
+> https://commerce.nearform.com/blog/2018/finding-webpack-duplicates-with-inspectpack-plugin/
+>
+> https://www.developerway.com/posts/webpack-and-yarn-magic-against-duplicates-in-bundles
+
+```javascript
+// min-dash htm preact
+```
