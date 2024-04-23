@@ -4,11 +4,11 @@
 
 <script>
 import { FormPlayground } from '@bpmn-io/form-js'
-import FeedbackButtonRenderExtension from '@/extension/custom-button/render'
-import FeedbackButtonPropertiesPanelExtension from '@/extension/custom-button/propertiesPanel'
+// import FeedbackButtonRenderExtension from '@/extension/custom-button/render'
+// import FeedbackButtonPropertiesPanelExtension from '@/extension/custom-button/propertiesPanel'
 import schema from '@/resources/schemas/empty.json'
-import RenderExtension from '@/extension/custom-range/render'
-import PropertiesPanelExtension from '@/extension/custom-range/propertiesPanel'
+// import RenderExtension from '@/extension/custom-range/render'
+// import PropertiesPanelExtension from '@/extension/custom-range/propertiesPanel'
 import aa from '@/assets/logo.png'
 import bb from '@/extension/custom-range/render/range.svg'
 
@@ -18,28 +18,31 @@ export default {
   name: 'FormPlayground',
   data () {
     return {
-      formBuilder: null
+      formPlayground: null
     }
   },
   mounted () {
     this.initFormBuilder()
   },
+  beforeDestroy () {
+    this.formPlayground && this.formPlayground.destroy()
+  },
   methods: {
     async initFormBuilder () {
-      const formPlayground = new FormPlayground({
+      this.formPlayground = new FormPlayground({
         container: document.querySelector('#form-editor'),
         schema: schema,
         data: {},
         additionalModules: [
-          FeedbackButtonRenderExtension,
-          RenderExtension
+          // FeedbackButtonRenderExtension,
+          // RenderExtension
         ],
         editorAdditionalModules: [
-          FeedbackButtonPropertiesPanelExtension,
-          PropertiesPanelExtension
+          // FeedbackButtonPropertiesPanelExtension,
+          // PropertiesPanelExtension
         ]
       })
-      console.log(formPlayground)
+      console.log(this.formPlayground)
     }
   }
 }

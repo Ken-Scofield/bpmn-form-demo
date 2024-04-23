@@ -18,6 +18,9 @@ export default {
   mounted () {
     this.initFormBuilder()
   },
+  beforeDestroy () {
+    this.formBuilder && this.formBuilder.destroy()
+  },
   methods: {
     async initFormBuilder () {
       // const schema = {
@@ -46,7 +49,7 @@ export default {
       //   ],
       //   type: 'default'
       // }
-      const formEditor = new FormEditor({
+      this.formBuilder = new FormEditor({
         container: document.querySelector('#form-editor')
         // additionalModules: [
         //   FeedbackButtonRenderExtension
@@ -55,9 +58,9 @@ export default {
         //   FeedbackButtonPropertiesPanelExtension
         // ]
       })
-      console.log(formEditor)
+      console.log(this.formBuilder)
       try {
-        await formEditor.importSchema(schema)
+        await this.formBuilder.importSchema(schema)
       } catch (err) {
         console.error('failed to import form', err)
       }

@@ -5,9 +5,9 @@ import classNames from 'classnames'
  */
 import { Description, Errors, FormContext, Label, Numberfield } from '@bpmn-io/form-js'
 
-// import { html, useContext } from 'diagram-js/lib/ui'
-import { useContext } from 'preact/hooks'
-import { html } from 'htm/preact'
+import { html, useContext } from 'diagram-js/lib/ui'
+// import { useContext } from 'preact/hooks'
+// import { html } from 'htm/preact'
 
 import './styles.css'
 

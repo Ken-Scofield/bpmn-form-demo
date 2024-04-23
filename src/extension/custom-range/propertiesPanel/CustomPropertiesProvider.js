@@ -108,7 +108,6 @@ function Min (props) {
   } = props
 
   const debounce = (fn) => fn
-
   return NumberFieldEntry({
     debounce,
     element: field,
