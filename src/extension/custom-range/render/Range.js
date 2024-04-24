@@ -7,7 +7,7 @@ import { Description, Errors, FormContext, Label, Numberfield } from '@bpmn-io/f
 
 import { html, useContext } from 'diagram-js/lib/ui'
 // import { useContext } from 'preact/hooks'
-// import { html } from 'htm/preact'
+// import { render } from 'preact'
 
 import './styles.css'
 

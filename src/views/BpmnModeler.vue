@@ -45,8 +45,6 @@ import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda.json' // ne
 // minimap
 import minimapModule from 'diagram-js-minimap'
 // magic
-import magicPropertiesProviderModule from '@/provider/magic'
-import magicModdleDescriptor from '@/descriptors/magic'
 //
 // import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser'
 // import ZeebeBpmnModdle from 'zeebe-bpmn-moddle/resources/zeebe.json'
@@ -120,14 +118,14 @@ export default {
           // ZeebePropertiesProviderModule,
           CreateAppendAnythingModule,
           minimapModule,
-          magicPropertiesProviderModule,
+          // magicPropertiesProviderModule,
           customControlsModule
           // ElementTemplateChooserModule
         ],
         moddleExtensions: {
           camunda: CamundaBpmnModdle,
-          qa: qaExtension,
-          magic: magicModdleDescriptor
+          qa: qaExtension
+          // magic: magicModdleDescriptor
           // zeebe: ZeebeBpmnModdle
         }
       })

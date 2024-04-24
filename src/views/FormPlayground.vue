@@ -7,8 +7,8 @@ import { FormPlayground } from '@bpmn-io/form-js'
 // import FeedbackButtonRenderExtension from '@/extension/custom-button/render'
 // import FeedbackButtonPropertiesPanelExtension from '@/extension/custom-button/propertiesPanel'
 import schema from '@/resources/schemas/empty.json'
-// import RenderExtension from '@/extension/custom-range/render'
-// import PropertiesPanelExtension from '@/extension/custom-range/propertiesPanel'
+import RenderExtension from '@/extension/custom-range/render'
+import PropertiesPanelExtension from '@/extension/custom-range/propertiesPanel'
 import aa from '@/assets/logo.png'
 import bb from '@/extension/custom-range/render/range.svg'
 
@@ -35,11 +35,11 @@ export default {
         data: {},
         additionalModules: [
           // FeedbackButtonRenderExtension,
-          // RenderExtension
+          RenderExtension
         ],
         editorAdditionalModules: [
           // FeedbackButtonPropertiesPanelExtension,
-          // PropertiesPanelExtension
+          PropertiesPanelExtension
         ]
       })
       console.log(this.formPlayground)

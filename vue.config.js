@@ -57,12 +57,9 @@ module.exports = defineConfig({
   configureWebpack: {
     resolve: {
       alias: {
-        preact: path.resolve(__dirname, 'node_modules/preact')
-        // 'min-dom': path.resolve(__dirname, 'node_modules/min-dom')
-        // '../preact': path.resolve(__dirname, 'node_modules/preact')
-        // 'preact/hooks': path.resolve(__dirname, 'node_modules/preact/hooks/dist/hooks.module.js'),
-        // 'preact/jsx-runtime': path.resolve(__dirname, 'node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js'),
-        // 'preact/compat': path.resolve(__dirname, 'node_modules/preact/compat/dist/compat.module.js')
+        preact: path.resolve(__dirname, 'node_modules/preact'),
+        '@bpmn-io/properties-panel/preact': path.resolve(__dirname, 'node_modules/preact'),
+        '../preact': path.resolve(__dirname, 'node_modules/preact')
       }
     },
     plugins: [
