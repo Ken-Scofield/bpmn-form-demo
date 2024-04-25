@@ -45,7 +45,8 @@ import CamundaBpmnModdle from 'camunda-bpmn-moddle/resources/camunda.json' // ne
 // minimap
 import minimapModule from 'diagram-js-minimap'
 // magic
-//
+import magicPropertiesProviderModule from '@/provider/magic'
+import magicModdleDescriptor from '@/descriptors/magic'
 // import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser'
 // import ZeebeBpmnModdle from 'zeebe-bpmn-moddle/resources/zeebe.json'
 // custom control
@@ -58,6 +59,11 @@ import KeyBindings from '@/components/Keybindings'
 import SaverTools from '@/components/SaverTools'
 // This relies on elementTemplates to be provided via an external module, i.e. bpmn-js-element-templates.
 // bpmn-js-connectors-extension
+import translateFunc from '@/translate/translateFunc'
+
+const customTranslateModule = {
+  translate: ['value', translateFunc]
+}
 export default {
   name: 'BpmnModeler',
   components: {
@@ -118,14 +124,15 @@ export default {
           // ZeebePropertiesProviderModule,
           CreateAppendAnythingModule,
           minimapModule,
-          // magicPropertiesProviderModule,
-          customControlsModule
+          magicPropertiesProviderModule,
+          customControlsModule,
+          customTranslateModule
           // ElementTemplateChooserModule
         ],
         moddleExtensions: {
           camunda: CamundaBpmnModdle,
-          qa: qaExtension
-          // magic: magicModdleDescriptor
+          qa: qaExtension,
+          magic: magicModdleDescriptor
           // zeebe: ZeebeBpmnModdle
         }
       })
