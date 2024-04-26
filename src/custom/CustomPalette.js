@@ -1,4 +1,5 @@
 // const _getPaletteEntries = PaletteProvider.prototype.getPaletteEntries
+// import PaletteProvider from 'bpmn-js/lib/features/palette/PaletteProvider'
 export default class CustomPalette {
   constructor (create, elementFactory, palette, translate) {
     this.create = create
@@ -15,17 +16,28 @@ export default class CustomPalette {
       translate
     } = this
 
-    // const entries = _getPaletteEntries.apply(this)
-    // delete entries['create.data-store']
-
     function createServiceTask (event) {
       const shape = elementFactory.createShape({ type: 'bpmn:ServiceTask' })
 
       create.start(event, shape)
     }
 
+    function createUserTask (event) {
+      const shape = elementFactory.createShape({ type: 'bpmn:UserTask' })
+      create.start(event, shape)
+    }
+
     return {
       // ...entries,
+      'create.user-task': {
+        group: 'activity',
+        className: 'bpmn-icon-user-task',
+        title: translate('Create UserTask'),
+        action: {
+          dragstart: createUserTask,
+          click: createUserTask
+        }
+      },
       'create.service-task': {
         group: 'activity',
         className: 'bpmn-icon-service-task',

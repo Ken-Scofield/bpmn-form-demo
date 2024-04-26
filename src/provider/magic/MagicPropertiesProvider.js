@@ -1,6 +1,7 @@
 // Import your custom property entries.
 // The entry is a text input field with logic attached to create,
 // update and delete the "spell" property.
+// https://forum.bpmn.io/t/properties-panel-edit-fields/5990
 import spellProps from './parts/SpellProps'
 
 import { is } from 'bpmn-js/lib/util/ModelUtil'
@@ -34,6 +35,7 @@ export default function MagicPropertiesProvider (propertiesPanel, translate) {
      * @return {Object[]} modified groups
      */
     return function (groups) {
+      console.log('groups--->', groups)
       // Add the "magic" group
       if (is(element, 'bpmn:StartEvent')) {
         groups.push(createMagicGroup(element, translate))

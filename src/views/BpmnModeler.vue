@@ -48,17 +48,20 @@ import minimapModule from 'diagram-js-minimap'
 import magicPropertiesProviderModule from '@/provider/magic'
 import magicModdleDescriptor from '@/descriptors/magic'
 // import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser'
-// import ZeebeBpmnModdle from 'zeebe-bpmn-moddle/resources/zeebe.json'
+// import ZeebeBpmnModdle from 'zeebe-bpmn-moddle/resources/zeebe.json' // Camunda Cloud
 // custom control
 import customControlsModule from '@/custom'
 // import ElementTemplateChooserModule from '@bpmn-io/element-template-chooser'
+// create append anything
 import { CreateAppendAnythingModule } from 'bpmn-js-create-append-anything'
+// extract view component
 import ZoomControls from '@/components/ZoomControls'
 import EditingTools from '@/components/EditingTools'
 import KeyBindings from '@/components/Keybindings'
 import SaverTools from '@/components/SaverTools'
 // This relies on elementTemplates to be provided via an external module, i.e. bpmn-js-element-templates.
 // bpmn-js-connectors-extension
+// translator
 import translateFunc from '@/translate/translateFunc'
 
 const customTranslateModule = {
