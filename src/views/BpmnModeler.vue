@@ -60,6 +60,8 @@ import EditingTools from '@/components/EditingTools'
 import KeyBindings from '@/components/Keybindings'
 import SaverTools from '@/components/SaverTools'
 // This relies on elementTemplates to be provided via an external module, i.e. bpmn-js-element-templates.
+//
+import simplifiedCustomProvider from '@/provider/custom'
 // bpmn-js-connectors-extension
 // translator
 import translateFunc from '@/translate/translateFunc'
@@ -127,8 +129,9 @@ export default {
           // ZeebePropertiesProviderModule,
           CreateAppendAnythingModule,
           minimapModule,
-          magicPropertiesProviderModule,
           customControlsModule,
+          magicPropertiesProviderModule,
+          simplifiedCustomProvider,
           customTranslateModule
           // ElementTemplateChooserModule
         ],
