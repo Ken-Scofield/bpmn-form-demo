@@ -51,7 +51,7 @@ The buttons are not part of bpmn-js, but simple HTML elements which execute thes
 @vue/babel-helper-vue-jsx-merge-props
 
 ```javascript
-// cli v4 cl5 去掉了file-loader, url-loader, raw-loader
+// cli v4: cl5  file-loader, url-loader, raw-loader repalced with webpack asset-module
 config.module
   .rule('images')
   .use('url-loader')
@@ -71,6 +71,7 @@ config.module
 
 > links
 > https://webpack.docschina.org/guides/asset-modules/#root
+> 
 > https://next.cli.vuejs.org/migrations/migrate-from-v4.html#vue-cli-service
 
 # issues
