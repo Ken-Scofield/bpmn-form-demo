@@ -1,4 +1,4 @@
-import translations from './translations1'
+import translations from './translations3' // official
 
 export default function customTranslate (template, replacements) {
   replacements = replacements || {}

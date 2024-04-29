@@ -7,6 +7,11 @@ import { FormEditor } from '@bpmn-io/form-js'
 // import FeedbackButtonRenderExtension from '@/extension/form/render'
 // import FeedbackButtonPropertiesPanelExtension from '@/extension/form/propertiesPanel'
 import schema from '@/resources/schemas/empty.json'
+import translateForm from '@/translate/translateForm'
+
+const customTranslateModule = {
+  translate: ['value', translateForm]
+}
 
 export default {
   name: 'FormBuilder',
@@ -50,10 +55,11 @@ export default {
       //   type: 'default'
       // }
       this.formBuilder = new FormEditor({
-        container: document.querySelector('#form-editor')
-        // additionalModules: [
-        //   FeedbackButtonRenderExtension
-        // ],
+        container: document.querySelector('#form-editor'),
+        additionalModules: [
+          customTranslateModule
+          // FeedbackButtonRenderExtension
+        ]
         // editorAdditionalModules: [
         //   FeedbackButtonPropertiesPanelExtension
         // ]

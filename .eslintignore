@@ -3,5 +3,6 @@ docs/*
 .git
 static/*
 node_modules
+rw_modules
 inspect_output.js
 public/*

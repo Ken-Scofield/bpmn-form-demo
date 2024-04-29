@@ -12,6 +12,7 @@ module.exports = defineConfig({
   chainWebpack (config) {
     // const svgRule = config.module.rule('svg')
     // svgRule.uses.clear()
+    config.resolve.modules.prepend('rw_modules')
     config.module.rules.delete('svg')
     // config.module.rule('svg')
     //   .test(/\.(svg)(\?.*)?$/).use('url-loader')
@@ -36,7 +37,8 @@ module.exports = defineConfig({
         dataUrlCondition: {
           maxSize: 10 * 1024
         }
-      })
+      }).end()
+    // config.resolve.modules.prepend('rw_modules').clear()
     // config.module.rule('raw-svg')
     //   .test(/\.svg$/).use('raw-loader')
     //   .loader('raw-loader')
